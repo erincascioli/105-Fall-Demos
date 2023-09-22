@@ -9,105 +9,86 @@ namespace IfStatements_Sec6
     {
         static void Main(string[] args)
         {
-            /*
+            #region Boolean Values and Boolean Expressions
+            // ----------------------------------------------------------------
+            // Boolean Values and Boolean Expressions
+            // ----------------------------------------------------------------
+
             // Variable Block
-            int largeNumber = 20000;
-            double smallNumber = 20000;
+            int largeNumber = 210;
+            double smallNumber = 200;
             bool isSnowingYet = false;
             string food = "oatmeal";
 
-            //Console.WriteLine(largeNumber > smallNumber);
+            // Will print True or False to the console window, depending on the evaluation
+            Console.WriteLine("Is largeNumber bigger than smallNumber? " + (largeNumber > smallNumber));
+
+            // ** ERRORS with Boolean Expressions **
+            // Cannot assign the value of an incompatible Boolean expression into a Boolean variable.
+            // Food (string) cannot be compared to a number (double)
             //Console.WriteLine(food > smallNumber);    // ERROR
 
+            // ** Boolean variables and Boolean Expressions **
+            // Boolean variables can be assigned the result of a Boolean expression evaluation.
             bool valuesAreEqual = (largeNumber == smallNumber);
-            //Console.WriteLine(valuesAreEqual);
+            Console.WriteLine("Are the values equal? " + valuesAreEqual);
 
+            // Pause the program!
+            Console.WriteLine("\n--- Press any key to continue! ---");
+            Console.ReadLine();
+            #endregion
+
+
+            #region Conditional Statements
+            // ----------------------------------------------------------------
             // Conditional Statements
-            //if (largeNumber == smallNumber)
-            if (valuesAreEqual)
+            // ----------------------------------------------------------------
+
+            // ** Conditions **
+            // Can use a Boolean expression OR a variable value as the condition!
+            // Code inside this if statement will ONLY execute if it evaluates to true.
+            if (largeNumber == smallNumber)         // OR you can say: if (valuesAreEqual)
             {
                 Console.WriteLine("The values are the same!");
             }
 
-            Console.WriteLine("Thanks for playing.");
-            */
+            // ** Multiple IF statements **
+            // Multiple IF statements in a series are seen as different conditionals.
+            // They are not a "set" or "connected."
 
-            // DIRECTIONS:
-            // MAKE A NEW PROJECT INSIDE YOUR LOCAL REPOSITORY --> DEMOS FOLDER
-            // NAME IT WHATEVER MAKES SENSE TO YOU (WE ARE CHANGING CONSOLE TEXT COLORS)
-            // ADD YOUR USUAL COMMENT BLOCK OF NAME/DATE/PURPOSE
-            // THEN WE'LL GET TO GITHUB DESKTOP IN A MINUTE!
+            // Ask user for number from 1 to 10.
+            Console.Write("Enter a whole number from 1 to 10: ");
+            int userNumber = int.Parse(Console.ReadLine());
 
-            /*
-            // PSEUDOCODE --> Plan of what you want to do. Plan your program in comments!
-
-            // PROGRAM PSEUDOCODE:
-            // Prompt and ask the user for a color
-            // Gather their input
-            // IF the user chooses red:
-            //     then change the text color to red.
-            // Otherwise, don't change it. Do nothing.  <-- DONT CODE THIS.  
-
-            // CODE:
-            // Prompt and ask the user for a color.
-            // Gather their input.
-            Console.Write("Enter a color: ");
-            string userColor = Console.ReadLine();
-
-            // IF the user chooses red:
-            //     then change the text color to red.
-            if ( userColor == "red" )
+            // Did they guess your number?
+            if(userNumber > 5)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{userNumber} is too big!");
+            }
+            if (userNumber < 5)
+            {
+                Console.WriteLine($"{userNumber} is too small!");
+            }
+            if(userNumber == 5)
+            {
+                Console.WriteLine($"{userNumber} is just right!");
             }
 
-            // This statement is part of the Main method block of code and will execute always.
-            Console.WriteLine(
-                "Back to Main... this will execute regardless of what the user chose and will be in red!");
-            */
+            // Pause the program!
+            Console.WriteLine("\n--- Press any key to continue! ---");
+            Console.ReadLine();
+            #endregion
 
 
-            /*
-            // PROGRAM PSEUDOCODE:
-            // Prompt and ask the user for a color
-            // Gather their input
-            // IF the user chooses red:
-            //     then change the text color to red.
-            // ELSE (any other conceivable possibility)
-            //     change the text color to blue
+            #region Pseudocode
+            // ----------------------------------------------------------------
+            // Pseudocode
+            // ----------------------------------------------------------------
 
-            // CODE:
-            // Prompt and ask the user for a color.
-            // Gather their input.
-            Console.Write("Enter a color: ");
-            string userColor = Console.ReadLine().Trim();
+            // Pseudocode is a plan of what you want your program to do.
+            // Plan your program out in comments!
 
-            // IF the user chooses red:
-            //     then change the text color to red.
-            if (userColor.ToLower() == "red")
-            //if (userColor.ToUpper() == "RED")
-            {
-                string chosenColor = "red";
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            // ELSE (any other conceivable possibility)
-            //     change the text color to blue
-            else
-            {
-                string chosenColor = "blue";
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-
-            Console.WriteLine("You chose the color " + chosenColor);
-            // This statement is part of the Main method block of code and will execute always.
-            Console.WriteLine(
-                "Back to Main... this will execute regardless of what the user chose and will be in red!");
-            */
-
-
-
-
-            // PROGRAM PSEUDOCODE:
+            // ** THIS PROGRAM's PSEUDOCODE: **
             // Prompt the user for changing the text color - Yes or No?
             // Gather their input
             // IF user says yes:
@@ -117,36 +98,50 @@ namespace IfStatements_Sec6
             //        Change text color to red
             //    ELSE:
             //        Change to blue
-            // IF user says no:
+            // ELSE:
             //    Confirm they are not changing color.
+            #endregion
 
+
+            #region Code!
+            // ** CODE: **
+
+            // Prompt the user for changing text color.
+            // Sanitize user's input.
             Console.Write("Do you want to change the text color? YES or NO: ");
             string userChoice = Console.ReadLine().Trim();
 
-            if(userChoice.ToLower() == "yes")                    // YES
+            // YES they want to change the text color.
+            if(userChoice.ToLower() == "yes") 
             {
+                // Prompt for a text color and gather input.
                 Console.Write("Enter a color: ");
                 string userColor = Console.ReadLine().Trim();
 
-                // IF the user chooses red:
-                //     then change the text color to red.
+                // User chooses red: Change text color to red.
                 if (userColor.ToLower() == "red")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("All text is now RED!");
                 }
-                // ELSE (any other conceivable possibility)
-                //     change the text color to blue
+                // User chooses anything else: Change text color to blue.
                 else
                 {
+                    Console.Write("I don't recognize that color... All text is now ");
                     Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("BLUE!");
                 }
             }
-            else                                                // NO
+            // User does not want to change text color.
+            // (FYI: They could have said "no" or "nah" or "dfgsdz" because this is an else statement...)
+            else
             {
                 Console.WriteLine("The text color will not be changed.");
             }
 
-
+            // Salutations!
+            Console.WriteLine("Goodbye!");
+            #endregion
         }
     }
 }
