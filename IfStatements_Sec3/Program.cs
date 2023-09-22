@@ -1,11 +1,16 @@
-﻿namespace IfStatements_Sec3
+﻿
+// Erin Cascioli
+// 9/22/23
+// Demo: If Statements (Conditionals)
+
+namespace IfStatements_Sec3
 {
     internal class Program
     {
         static void Main(string[] args)
-        {
-            /*
-            // Compatible
+        {            
+
+            // Boolean variables must be compatible for expression evaluation
             bool isFallNow = true;
             bool amHungry = false;
             int largeNum = 2000;
@@ -15,38 +20,65 @@
             Console.WriteLine("Are these the same? " + (largeNum == smallNum));
             //Console.WriteLine("Are these the same? " + (isFallNow > largeNum));
 
-            // New code block! A conditional, an if statement.
-            if( amHungry )
+
+            // PSEUDOCODE
+            // Greet user. Ask: Does user wants to change text color? YES or NO
+            // Gather input.
+            // IF Yes:
+            //      IF they typed red
+            //          Change the text color to red.
+            //      ELSE IF they typed yellow
+            //          Change the text color to yellow.
+            //      ELSE IF they typed magenta
+            //          Change the text color to magenta.
+            //      ELSE
+            //          Change the text color to blue.
+            // IF NO:
+            //      Confirm they are not changing the colors.
+
+
+            // Greet user.
+            // Ask if they want to change the text color?
+            // Gather input.
+            Console.WriteLine("Hi. Do you want to change the colors?");
+            Console.Write("Your choices are: YES or NO. ");
+            string userChoice = Console.ReadLine().Trim();
+
+            // IF YES:
+            if(userChoice.ToUpper() == "YES")
             {
-                Console.WriteLine("Eat!");
+                Console.WriteLine("Hi. What is your favorite color?");
+                Console.Write("Your choices are: RED or YELLOW or MAGENTA. ");
+                string userColor = Console.ReadLine().Trim();
+
+                if (userColor.ToUpper() == "RED")              // if ( userColor.ToLower() == "red" )
+                {
+                    Console.WriteLine("Here's some red for you!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (userColor.ToUpper() == "YELLOW")        // if ( userColor.ToLower() == "yellow" )
+                {
+                    Console.WriteLine("Here's some yellow for you!");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                else if (userColor.ToUpper() == "MAGENTA")        // if ( userColor.ToLower() == "magenta" )
+                {
+                    Console.WriteLine("Here's some magenta for you!");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                }
+                else
+                {
+                    Console.WriteLine("I don't recognize that input. The colors were red, yellow, or magenta.");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                }
             }
-
-            // Second if statement.
-            // This is NOT CONNECTED to the first statement in any way!
-            if ( largeNum > smallNum )
-            {
-                Console.WriteLine($"{largeNum} is greater than {smallNum}.");
-            }
-            */
-
-
-            // Ask the user for their favorite color
-            // Gather their input into a string variable
-            // Based on their answer, change the console text!
-            Console.Write("What is your favorite color? ");
-            string userColor = Console.ReadLine().Trim();
-
-            // If-Else statements
-            // Did the user type in red? Change the text to red.
-            if( userColor.ToUpper() == "RED" )
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
+            //IF NO --> ELSE:
             else
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("I will keep your text white.");
             }
 
+            // Goodbye!
             Console.WriteLine("Goodbye!");
         }
     }
