@@ -9,6 +9,36 @@ namespace WhileLoops
     {
         static void Main(string[] args)
         {
+            // PSEUDOCODE:
+            // Ask the user for 1-10
+            // Gather their input
+            // WHILE number is out of range
+            //     Provide feedback
+            //     Re-prompt for a new value
+
+
+            // Prompt for value between 1 and 10
+            // Get user's answer
+            Console.Write("Number? ");
+            int userNumber = int.Parse(Console.ReadLine());
+
+            // As long as the user's value is invalid...
+            while(userNumber <= 0 || userNumber >= 11)
+            {
+                // Give them feedback.
+                Console.WriteLine("Invalid range!");
+
+                // And re-prompt for a new number.
+                Console.Write("Number? ");
+                userNumber = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine($"Thanks for your number of {userNumber}!");
+
+
+
+
+
             // ----------------------------------------------------------------
             // WHILE LOOPS
             // ----------------------------------------------------------------
