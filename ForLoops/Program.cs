@@ -1,4 +1,7 @@
-﻿using System.Xml;
+﻿
+// Erin Cascioli
+// 10/6/23
+// Demo: For Loops
 
 namespace ForLoops
 {
@@ -17,7 +20,6 @@ namespace ForLoops
             // 2
             // 3
             // 4
-
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine(i);
@@ -52,6 +54,15 @@ namespace ForLoops
             // ----------------------------------------------------------------
             // OTHER FOR LOOPS
             // ----------------------------------------------------------------
+
+            // Prints every character in a string on a separate line
+            string word = "yummy coffee";
+            for (int i = 0; i <= word.Length - 1; i++)      // or i < word.Length
+            {
+                Console.WriteLine(word[i]);
+            }
+            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - \n");
+
 
             // Prints 0 through 9
             for (int i = 0; i <= 9; i++)            // or (int i = 0; i < 10; i++)
