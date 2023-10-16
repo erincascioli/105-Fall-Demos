@@ -20,9 +20,9 @@ namespace ForLoops
             // 2
             // 3
             // 4
-            for (int i = 0; i < 5; i++)
+            for (int i = 1; i <= 50000000; i++)
             {
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
             }
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - \n");
 
