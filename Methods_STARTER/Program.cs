@@ -193,15 +193,16 @@ namespace Methods_STARTER
         /// <returns>True when one value is 10 or if the sum of values is 10. False otherwise.</returns>
         public static bool MakesTen(int number1, int number2)
         {
-            if( (number1 == 10 || number2 == 10)  ||        // Either is 10
-                (number1 + number2 == 10) )                 // Sum is 10
+            if(number1 == 10 || number2 == 10)       // Either is 10
+            {                 
+                return true;
+            }
+            else if(number1 + number2 == 10)        // Sum is 10
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
 
             // OR remove the else condition with code:
             //if ((number1 == 10 || number2 == 10)  ||        // Either is 10
@@ -231,7 +232,7 @@ namespace Methods_STARTER
 
             // Or in 1 line:
             // Compare 1 & 2, then compare the largest of those with 3.
-            //return Math.Max(Math.Max(number1, number2), number3);
+            return Math.Max(Math.Max(number1, number2), number3);
         }
 
 
@@ -309,39 +310,42 @@ namespace Methods_STARTER
             }
 
             // OR THIS:
-            //for (int i = 0; i < phrase.Length; i++)
-            //{
-            //    if (i < phrase.Length - 1)
-            //    {
-            //        Console.Write(phrase[i] + "-");
-            //    }
-            //    else
-            //    {
-            //        Console.Write(phrase[i]);
-            //    }
-            //}
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                if (i < phrase.Length - 1)
+                {
+                    Console.Write(phrase[i] + "-");
+                }
+                else
+                {
+                    Console.Write(phrase[i]);
+                }
+            }
 
             // OR THIS:
-            //for (int i = 0; i < phrase.Length - 1; i++)
-            //{
-            //        Console.Write(phrase[i] + "-");
-            //}
-            //// ONLY if the string has more than 1 character
-            //if(phrase.Length > 0)
-            //{
-            //    Console.WriteLine(phrase[phrase.Length - 1]);
-            //}
+            for (int i = 0; i < phrase.Length - 1; i++)
+            {
+                Console.Write(phrase[i] + "-");
+            }
+            // ONLY if the string has more than 1 character
+            if (phrase.Length > 0)
+            {
+                Console.WriteLine(phrase[phrase.Length - 1]);
+            }
 
             // OR THIS:
-            //for (int i = 0; i < phrase.Length; i++)
-            //{
-            //    Console.Write(phrase[i]);
-            //    if (i != phrase.Length - 1)
-            //    {
-            //        Console.Write("-");
-            //    }
-            //}
-            //Console.WriteLine();
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                // Print the character no matter what
+                Console.Write(phrase[i]);
+
+                // Is it not the end? Print a dash.
+                if (i != phrase.Length - 1)
+                {
+                    Console.Write("-");
+                }
+            }
+            Console.WriteLine();
         }
 
 
