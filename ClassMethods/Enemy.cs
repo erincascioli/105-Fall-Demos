@@ -13,7 +13,9 @@ namespace ClassMethods
     /// </summary>
     internal class Enemy
     {
-        // Fields come first
+        // --------------------------------------------------------------------
+        // FIELDS
+        // --------------------------------------------------------------------
 
         /// <summary>
         /// Name of this enemy, like "Bob"
@@ -35,26 +37,53 @@ namespace ClassMethods
         /// </summary>
         public int yPosition;
 
-        // Constructors are listed next
+        /// <summary>
+        /// Used to generate randon numbers within this class
+        /// </summary>
+        public Random generator;
 
+
+        // --------------------------------------------------------------------
+        // CONSTRUCTOR(S)
+        // --------------------------------------------------------------------
+        /// <summary>
+        /// Constructs an Enemy object
+        /// </summary>
+        /// <param name="name">Enemy's name</param>
+        /// <param name="health">Enemy's starting health value</param>
+        /// <param name="xPosition">Horizontal 2D coordinate</param>
+        /// <param name="yPosition">Vertical 2D coordinate</param>
         public Enemy(string name, int health, int xPosition, int yPosition)
         {
-            // field = param;
+            // These values are coming from parameters!
+            // Should always assign field = param; and not the other way around.
             this.name = name;
             this.health = health;
             this.xPosition = xPosition;
             this.yPosition = yPosition;
+
+            // Instantiate the random object
+            generator = new Random();
         }
 
-        // A different naming convention
-        //public Enemy(string enemyName, int enemyHealth)
-        //{
-        //    name = enemyName;
-        //    health = enemyHealth;
-        //}
+        // *** Naming conventions for constructor identifiers ***
+        // Your constructors could use a different naming convention, like the following:
+        //
+        // public Enemy(string enemyName, int enemyHealth)
+        // {
+        //     name = enemyName;
+        //     health = enemyHealth;
+        // }
+        //      OR
+        // public Enemy(string p_name, int p_health)
+        // {
+        //     name = p_name;
+        //     health = p_health;
+        // }
 
-        // Methods listed last
-
+        // --------------------------------------------------------------------
+        // METHODS
+        // --------------------------------------------------------------------
 
         /// <summary>
         /// Prints information about this Enemy class.
@@ -62,9 +91,48 @@ namespace ClassMethods
         public void PrintEnemy()
         {
             // Access the fields of the class and print their information
-            Console.WriteLine("The enemy's name is " + name);
-            Console.WriteLine("The enemy's health is " + health);
-            Console.WriteLine($"The enemy is at ({xPosition}, {yPosition})");
+            Console.WriteLine($"The enemy's name is {name}.");
+            Console.WriteLine($"The enemy's health is {health}.");
+            Console.WriteLine($"The enemy is at ({xPosition}, {yPosition}).");
+        }
+
+
+        /// <summary>
+        /// Damages the enemy's health by an amount of hit points
+        /// </summary>
+        /// <param name="hitPoints">Positive value</param>
+        public void DamageEnemy(int hitPoints)
+        {
+            // Value must be positive so as to not heal the enemy.
+            if(hitPoints > 0)
+            {
+                // Reduce the enemy's health by hit points:  health -= hitPoints
+                health = health - hitPoints;
+            }
+        }
+
+
+        /// <summary>
+        /// Return a randomly-generated attack between 1 and 10.
+        /// </summary>
+        /// <returns>Random positive integer ranged 1 through 10.</returns>
+        public int Attack()
+        {
+            int randomAttackValue = generator.Next(1, 11);
+            return randomAttackValue;
+        }
+
+
+        /// <summary>
+        /// Overloaded Attack allows custom range of random values.
+        /// </summary>
+        /// <param name="lowerRange">Lowest possible attack value</param>
+        /// <param name="upperRange">Highest possible attack value</param>
+        /// <returns>Random value between the lower and upper ranges</returns>
+        public int Attack(int lowerRange, int upperRange)
+        {
+            int randomAttackValue = generator.Next(1, 11);
+            return randomAttackValue;
         }
     }
 }
