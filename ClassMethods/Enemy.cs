@@ -91,9 +91,11 @@ namespace ClassMethods
         public void PrintEnemy()
         {
             // Access the fields of the class and print their information
+            Console.WriteLine($"****** Information about {name}: *******");
             Console.WriteLine($"The enemy's name is {name}.");
             Console.WriteLine($"The enemy's health is {health}.");
             Console.WriteLine($"The enemy is at ({xPosition}, {yPosition}).");
+            Console.WriteLine();
         }
 
 
@@ -133,6 +135,18 @@ namespace ClassMethods
         {
             int randomAttackValue = generator.Next(1, 11);
             return randomAttackValue;
+        }
+
+
+        /// <summary>
+        /// Moves the enemy within the console window.
+        /// </summary>
+        /// <param name="xOffset">Number of units to the left or right, where negative values move left.</param>
+        /// <param name="yOffset">Number of units to the top or bottom, where negative values move up.</param>
+        public void Move(int xOffset, int yOffset)
+        {
+            xPosition += xOffset;
+            yPosition += yOffset;
         }
     }
 }
