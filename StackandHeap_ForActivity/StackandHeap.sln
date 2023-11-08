@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackandHeap", "StackandHeap.csproj", "{1039882D-771B-43FA-B6CA-61473B770C39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1039882D-771B-43FA-B6CA-61473B770C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1039882D-771B-43FA-B6CA-61473B770C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1039882D-771B-43FA-B6CA-61473B770C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1039882D-771B-43FA-B6CA-61473B770C39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5122F66-2BC9-400B-832B-D37A1091239A}
+	EndGlobalSection
+EndGlobal
