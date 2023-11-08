@@ -20,27 +20,27 @@ namespace ClassMethods
         /// <summary>
         /// Name of this enemy, like "Bob"
         /// </summary>
-        public string name;
+        private string name;
 
         /// <summary>
         /// Starting health of the enemy
         /// </summary>
-        public int health;
+        private int health;
 
         /// <summary>
         /// X Position of the enemy (in a 2D game)
         /// </summary>
-        public int xPosition;
+        private int xPosition;
 
         /// <summary>
         /// Y position of the enemy (in a 2D game)
         /// </summary>
-        public int yPosition;
+        private int yPosition;
 
         /// <summary>
-        /// Used to generate randon numbers within this class
+        /// Used to generate random numbers within this class
         /// </summary>
-        public Random generator;
+        private Random generator;
 
 
         // --------------------------------------------------------------------
@@ -145,8 +145,22 @@ namespace ClassMethods
         /// <param name="yOffset">Number of units to the top or bottom, where negative values move up.</param>
         public void Move(int xOffset, int yOffset)
         {
-            xPosition += xOffset;
-            yPosition += yOffset;
+            if(xPosition + xOffset < Console.WindowWidth)
+            {
+                xPosition += xOffset;
+            }
+            if(yPosition + yOffset < Console.WindowHeight)
+            {
+                yPosition += yOffset;
+            }
+        }
+
+
+        public void PrintInPlace()
+        {
+            Console.CursorLeft = xPosition;
+            Console.CursorTop = yPosition;
+            Console.Write(name[0]);
         }
     }
 }
