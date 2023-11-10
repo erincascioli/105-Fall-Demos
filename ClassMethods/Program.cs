@@ -17,12 +17,24 @@ namespace ClassMethods
             // ---------------------------------------------------------------
 
             // Create 2 new Enemy instances and print their values.
-            Enemy bob = new Enemy("Bob", 25, 0, 100);
-            bob.PrintEnemy();
+            Enemy bob = new Enemy("Bob", 25, 0, 10);
+            Enemy fred = new Enemy("Fred", 100, 3, 12);
 
-            Enemy fred = new Enemy("Fred", 100, 300, 100);
-            fred.PrintEnemy();
+            //bob.PrintInPlace();
+            //fred.PrintInPlace();
 
+            //bob.Move(5, 0);
+            //bob.PrintInPlace();
+
+            //fred.Move(90, 0);
+            //fred.PrintInPlace();
+
+            // 20 (vertical/Y/Top) and 60 (horizontal/X/Left)
+            fred.xPosition = 100;
+            fred.yPosition = 150;
+            fred.PrintInPlace();
+
+            /*
             // ---------------------------------------------------------------
             // Enemies attack each other
             // ---------------------------------------------------------------
@@ -49,7 +61,8 @@ namespace ClassMethods
             fred.Move(50, -10);
             Console.WriteLine("Fred after move:");
             fred.PrintEnemy();
-        } // END MAIN
+            */
+        } 
 
 
         /// <summary>
