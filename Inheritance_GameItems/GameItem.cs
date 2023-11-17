@@ -48,6 +48,5 @@ namespace Inheritance_GameItems
         {
             Console.WriteLine($"You will receive {sellCost} when you sell the item.");
         }
-
     }
 }
