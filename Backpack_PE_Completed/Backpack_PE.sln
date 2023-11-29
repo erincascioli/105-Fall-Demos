@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backpack_PE", "Backpack_PE.csproj", "{B03ADE1B-0AF9-46C2-B403-B00D8D55ED14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B03ADE1B-0AF9-46C2-B403-B00D8D55ED14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03ADE1B-0AF9-46C2-B403-B00D8D55ED14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03ADE1B-0AF9-46C2-B403-B00D8D55ED14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03ADE1B-0AF9-46C2-B403-B00D8D55ED14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BFA3B43-08E4-4E7A-921D-875C43E6A06D}
+	EndGlobalSection
+EndGlobal
