@@ -1,0 +1,4 @@
+Must call ReadLine for every line in the file.
+Every. Line.
+This file requires ReadLine to be called
+four times, in order to gather all data from the file.

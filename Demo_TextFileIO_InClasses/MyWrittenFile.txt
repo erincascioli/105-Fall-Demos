@@ -1,0 +1,5 @@
+If a file does not exist,
+the StreamWriter will create a new file with that filename.
+There's really no crashing upon writing to a file.
+Although an invalid filename will write to the 'wrong' file,
+it won't crash!
