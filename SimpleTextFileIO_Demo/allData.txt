@@ -1,0 +1,3 @@
+Gollum|50|Precious
+Fluffy the Terrible|125|Rubber Mallet of Doom
+Gnoll|15|Mace

@@ -1,0 +1,11 @@
+This text from the file will be read in
+one line at a time. The while loop ensures
+that the text will keep being read until the
+end-of-text character is encountered, at which the
+ReadLine() method will return null. That will not occur
+until there is no more text in a file.
+
+You can have line breaks in a file but they don't count
+as end of file.
+
+Now it's the end. There's nothing more after this period.
